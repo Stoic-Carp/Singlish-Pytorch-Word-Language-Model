@@ -10,8 +10,8 @@ import torch.onnx
 import data
 import model
 
-parser = argparse.ArgumentParser(description='PyTorch Wikitext-2 RNN/LSTM/GRU/Transformer Language Model')
-parser.add_argument('--data', type=str, default='./data/wikitext-2',
+parser = argparse.ArgumentParser(description='PyTorch RNN/LSTM/GRU/Transformer Language Model')
+parser.add_argument('--data', type=str, default='./data/singlish',
                     help='location of the data corpus')
 parser.add_argument('--model', type=str, default='LSTM',
                     help='type of recurrent net (RNN_TANH, RNN_RELU, LSTM, GRU, Transformer)')
