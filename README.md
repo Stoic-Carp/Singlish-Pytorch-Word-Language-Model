@@ -1,7 +1,8 @@
-# Word-level language modeling RNN
+# Word-level language modeling RNN (Largely based on Pytorch official example of word language model on Github)
 
 This example trains a multi-layer RNN (Elman, GRU, or LSTM) on a language modeling task.
 By default, the training script uses the Wikitext-2 dataset, provided.
+Please specify Singlish data if training a model for Singlish.
 The trained model can then be used by the generate script to generate new text.
 
 ```bash 
