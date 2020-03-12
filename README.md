@@ -1,19 +1,19 @@
-# Word-level language modeling RNN (Largely based on Pytorch official example of word language model on Github)
+# Word-level language modeling RNN 
 
-This example trains a multi-layer RNN (Elman, GRU, or LSTM) on a language modeling task.
-By default, the training script uses the Wikitext-2 dataset, provided.
-Please specify Singlish data if training a model for Singlish.
+(Largely based on Pytorch official example of word language model on Github)
+This example trains a multi-layer RNN (Elman, GRU, or LSTM) or a transformer on a language modeling task.
+By default, the training script uses the Singlish dataset, provided.
+Wikitext-2 data is also included. 
 The trained model can then be used by the generate script to generate new text.
 
 ```bash 
-python main.py --cuda --epochs 6           # Train a LSTM on Wikitext-2 with CUDA
-python main.py --cuda --epochs 6 --tied    # Train a tied LSTM on Wikitext-2 with CUDA
+python main.py --cuda --epochs 6           # Train a LSTM on Singlish with CUDA
+python main.py --cuda --epochs 6 --tied    # Train a tied LSTM on Singlish with CUDA
 python main.py --cuda --epochs 6 --model Transformer --lr 5   
-                                           # Train a Transformer model on Wikitext-2 with CUDA
-python main.py --cuda --tied               # Train a tied LSTM on Wikitext-2 with CUDA for 40 epochs
+                                           # Train a Transformer model on Singlish with CUDA
+python main.py --cuda --tied               # Train a tied LSTM on Singlish with CUDA for 40 epochs
 python generate.py                         # Generate samples from the trained LSTM model.
-python generate.py --cuda --model Transformer
-                                           # Generate samples from the trained Transformer model.
+
 ```
 
 The model uses the `nn.RNN` module (and its sister modules `nn.GRU` and `nn.LSTM`)
