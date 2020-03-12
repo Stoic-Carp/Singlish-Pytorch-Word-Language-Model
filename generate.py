@@ -1,5 +1,5 @@
 ###############################################################################
-# Language Modeling on Wikitext-2
+# Language Modeling on Singlish
 #
 # This file generates new sentences sampled from the language model
 #
@@ -11,7 +11,7 @@ import torch
 
 import data
 
-parser = argparse.ArgumentParser(description='PyTorch Wikitext-2 Language Model')
+parser = argparse.ArgumentParser(description='PyTorch Singlish Language Model')
 
 # Model parameters.
 parser.add_argument('--data', type=str, default='./data/singlish',
