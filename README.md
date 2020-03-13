@@ -1,4 +1,4 @@
-# Word-level language modeling RNN 
+# Singlish Word-level Language Model
 
 (Largely based on Pytorch official example of word language model on Github)
 This example trains a multi-layer RNN (Elman, GRU, or LSTM) or a transformer on a language modeling task.
