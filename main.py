@@ -13,7 +13,7 @@ import model
 parser = argparse.ArgumentParser(description='PyTorch RNN/LSTM/GRU/Transformer Language Model')
 parser.add_argument('--data', type=str, default='./data/singlish',
                     help='location of the data corpus')
-parser.add_argument('--model', type=str, default='LSTM',
+parser.add_argument('--model', type=str, default='Transformer',
                     help='type of recurrent net (RNN_TANH, RNN_RELU, LSTM, GRU, Transformer)')
 parser.add_argument('--emsize', type=int, default=200,
                     help='size of word embeddings')
@@ -176,6 +176,7 @@ def train():
         loss.backward()
 
         # `clip_grad_norm` helps prevent the exploding gradient problem in RNNs / LSTMs.
+        # Gradient clipping also appears to help in the transformer model. Validation loss decreases when gradient clipping decreased from 0.25 to 0.15
         torch.nn.utils.clip_grad_norm_(model.parameters(), args.clip)
         for p in model.parameters():
             p.data.add_(-lr, p.grad.data)
