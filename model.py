@@ -146,5 +146,7 @@ class TransformerModel(nn.Module):
         src = self.encoder(src) * math.sqrt(self.ninp)
         src = self.pos_encoder(src)
         output = self.transformer_encoder(src, self.src_mask)
+        norm=nn.BatchNorm1d(num_features=src.shape[1]).cuda()
+        output = norm(output)
         output = self.decoder(output)
         return F.log_softmax(output, dim=-1)
