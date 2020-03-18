@@ -19,11 +19,11 @@ parser.add_argument('--emsize', type=int, default=200,
                     help='size of word embeddings')
 parser.add_argument('--nhid', type=int, default=200,
                     help='number of hidden units per layer')
-parser.add_argument('--nlayers', type=int, default=2,
+parser.add_argument('--nlayers', type=int, default=6,
                     help='number of layers')
 parser.add_argument('--lr', type=float, default=20,
                     help='initial learning rate')
-parser.add_argument('--clip', type=float, default=0.25,
+parser.add_argument('--clip', type=float, default=0.05,
                     help='gradient clipping')
 parser.add_argument('--epochs', type=int, default=20,
                     help='upper epoch limit')
@@ -46,7 +46,7 @@ parser.add_argument('--save', type=str, default='model.pt',
 parser.add_argument('--onnx-export', type=str, default='',
                     help='path to export the final model in onnx format')
 
-parser.add_argument('--nhead', type=int, default=2,
+parser.add_argument('--nhead', type=int, default=4,
                     help='the number of heads in the encoder/decoder of the transformer model')
 
 args = parser.parse_args()
