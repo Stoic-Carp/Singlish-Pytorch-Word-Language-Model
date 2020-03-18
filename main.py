@@ -101,8 +101,8 @@ if args.model == 'Transformer':
 else:
     model = model.RNNModel(args.model, ntokens, args.emsize, args.nhid, args.nlayers, args.dropout, args.tied).to(device)
 
-#criterion = nn.NLLLoss()
-criterion = nn.CrossEntropyLoss()
+criterion = nn.NLLLoss()
+#criterion = nn.CrossEntropyLoss()
 
 ###############################################################################
 # Training code
