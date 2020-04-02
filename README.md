@@ -42,12 +42,23 @@ optional arguments:
   --onnx-export                    path to export the final model in onnx format
 ```
 
-With these arguments, a variety of models can be tested.
-As an example, the following arguments produce slower but better models:
+With these arguments, a variety of models can be tested. The parameters that are used to train our best model are used as default arguments in our parser. Hence, to train the model, just run 
 
 ```bash
-python main.py --cuda --emsize 650 --nhid 650 --dropout 0.5 --epochs 40           
-python main.py --cuda --emsize 650 --nhid 650 --dropout 0.5 --epochs 40 --tied    
-python main.py --cuda --emsize 1500 --nhid 1500 --dropout 0.65 --epochs 40        
-python main.py --cuda --emsize 1500 --nhid 1500 --dropout 0.65 --epochs 40 --tied 
+python main.py --cuda 
+```
+(Remove the cuda if you do not have GPU supported pytorch)
+
+Text Generation can by done by using 
+
+```bash
+  --words                          number of words to be generated  
+  --cuda                           enable CUDA usage for faster generation 
+  --temperature                    higher temperature will increase diversity, default = '1.0'  
+  --seed                           change the seed for text generation 
+```
+To generate the text, we used 
+
+```bash
+python generate.py --cuda 
 ```
